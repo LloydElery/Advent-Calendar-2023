@@ -1061,26 +1061,43 @@ eightgndhmrfouronexldvdvqnzxqjczfk1
 
     <!-- MY CODE -->
     <script>
-      let textEl = document.querySelector("pre"); // fetch the html element
+      // Fetch the <pre> element from the HTML document
+      let textEl = document.querySelector("pre");
+
+      // Get the text content of the <pre> element
       let textElContent = textEl.textContent;
+
+      // Split the content into an array of strings, each representing a line
       let textRow = textElContent.split("\n");
+
+      // Initialize a variable to store the total sum
       let totalSum = 0;
 
+      // Iterate through each line in the textRow array
       for (let i = 0; i < textRow.length; i++) {
+        // Get the current line
         const currentRow = textRow[i];
+
+        // Use a regular expression to match all digits in the current line
         let digits = currentRow.match(/\d/g);
 
+        // Check if digits were found in the current line
         if (digits) {
+          // Get the first and last digits
           let firstDigit = digits[0];
           let lastDigit = digits[digits.length - 1];
+
+          // Concatenate the first and the first character of the last digit, then parse it into an integer
           let result = parseInt(
             firstDigit.toString() + lastDigit.toString().substring(0, 1)
           );
 
+          // Add the result to the total sum
           totalSum += result;
         }
       }
 
+      // Log the total sum to the console
       console.log("Total sum:", totalSum);
       // -> 54644
 
