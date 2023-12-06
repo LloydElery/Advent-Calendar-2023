@@ -131,46 +131,11 @@ Game 100: 2 blue, 12 green; 6 green, 1 red, 12 blue; 1 green, 5 blue, 1 red; 1 r
 
       // Fetch the <pre> element from the HTML document
       let textEl = document.querySelector("pre");
+      let text = textEl.innerHTML;
 
-      // Get the text content of the <pre> element
-      let textElContent = textEl.textContent;
+      let games = text.split("Game ");
 
-      // Split the content into an array of strings, each representing a line
-      let textRow = textElContent.split("\n");
-
-      let red = "red;";
-      let redBalls = 0;
-      let blueBalls = 0;
-      let greenBalls = 0;
-      let totalSum = 0;
-
-      // Iterate through each line in the textRow array
-      for (let i = 0; i < textRow.length; i++) {
-        // Get the current line
-        const currentRow = textRow[i];
-
-        currentRow.split(string, int);
-
-        console.log(currentRow);
-
-        // Use a regular expression to match all digits in the current line
-        let digits = currentRow.match(/\d/g);
-
-        // Check if digits were found in the current line
-        if (digits) {
-          // Get the first and last digits
-          let firstDigit = digits[0];
-          let lastDigit = digits[digits.length - 1];
-
-          // Concatenate the first and the first character of the last digit, then parse it into an integer
-          let result = parseInt(
-            firstDigit.toString() + lastDigit.toString().substring(0, 1)
-          );
-
-          // Add the result to the total sum
-          totalSum += result;
-        }
-      }
+      // console.log(typeof textEl); // Check what type of datatype we are dealing with.
     </script>
   </body>
 </html>
